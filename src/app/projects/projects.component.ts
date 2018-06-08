@@ -18,14 +18,16 @@ export class ProjectsComponent implements OnInit {
       by: 'zulul',
       cat: 'moosic',
       goal: 100000,
-      status: 1
+      status: 1,
+      left: 60
     };
     const p2 = {
       nombre: 'Raul el perrete',
       by: 'pgallardo',
       cat: 'manualidades',
       goal: '9000000',
-      status: 0
+      status: 0,
+      left: 20
     };
     this.projects.push(p1);
     this.projects.push(p2);

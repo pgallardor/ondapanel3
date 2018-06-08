@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+<div class="container col-lg-6 login">
+  <form class="form-signin" (ngSubmit)="login()" #loginForm="ngForm">
+    <div class="alert alert-warning alert-dismissible" role="alert" *ngIf="message !== ''">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      {{message}}
+    </div>
+    <h2 class="form-signin-heading" align="center">OndaSonora Admin</h2>
+    <br>
+    <label for="inputEmail" class="sr-only">Username</label>
+    <input type="email" class="form-control" placeholder="Username" [(ngModel)]="loginData.username" name="username" required/>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" class="form-control" placeholder="Password" [(ngModel)]="loginData.password" name="password" required/>
+    <br>
+    <button class="btn btn-md btn-width btn-primary btn-block" type="submit" [disabled]="!loginForm.form.valid">Entra</button>
+  </form>
+</div>

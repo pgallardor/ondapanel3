@@ -12,6 +12,7 @@
     <th scope="col">Hecho por</th>
     <th scope="col">Categoría</th>
     <th scope="col">Meta</th>
+    <th scope="col">Plazo restante</th>
     <th scope="col">Estado</th>
     <th scope="col">Acciones</th>
   </thead>
@@ -21,6 +22,11 @@
     <td>{{proj.by}}</td>
     <td>{{proj.cat}}</td>
     <td>{{proj.goal}}</td>
+    <td>
+      <div class="progress" style="height: 5px;">
+        <div class="progress-bar" role="progressbar" [style.width]="proj.left + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </td>
     <td>{{proj.status}}</td>
     <td> <button class="btn btn-primary" (click)="setStatus(proj.nombre)">Change status</button> </td>
   </tr>
