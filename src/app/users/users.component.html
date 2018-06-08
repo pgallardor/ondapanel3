@@ -1,3 +1,24 @@
-<p>
-  users works!
-</p>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <input #box type="text" class="form-control" placeholder="Buscar por nombre" (keyup)="filter(box.value)"> <!-- Modify by writing -->
+    </div>
+  </form>
+</div>
+<table class="table" style="margin:10px auto; width:800px">
+  <thead>
+    <th scope="col">Username</th>
+    <th scope="col">Estado</th>
+    <th scope="col"> Acciones </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of display_users">
+      <td>{{user.username}}</td>
+      <td>
+        <div *ngIf="user.status === 1; else elseBlock">Activo</div>
+        <ng-template #elseBlock>Baneado</ng-template>
+      </td>
+      <td> <button class="btn btn-primary" (click)="setStatus(user.username)">Change status</button> </td>
+    </tr>
+  </tbody>
+</table>

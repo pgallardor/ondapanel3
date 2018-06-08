@@ -1,3 +1,28 @@
-<p>
-  projects works!
-</p>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <input #box type="text" class="form-control" placeholder="Buscar por nombre" (keyup)="filterName(box.value)">
+      <input type="checkbox" [(ngModel)]="filter" name="filt" (click)="filterPending($event)"> <label>Mostrar solo proyectos pendientes</label>
+    </div>
+  </form>
+</div>
+<table class="table" style="margin:10px auto; width:1000px">
+  <thead>
+    <th scope="col">Nombre proyecto</th>
+    <th scope="col">Hecho por</th>
+    <th scope="col">Categoría</th>
+    <th scope="col">Meta</th>
+    <th scope="col">Estado</th>
+    <th scope="col">Acciones</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let proj of display_proj">
+    <td>{{proj.nombre}}</td>
+    <td>{{proj.by}}</td>
+    <td>{{proj.cat}}</td>
+    <td>{{proj.goal}}</td>
+    <td>{{proj.status}}</td>
+    <td> <button class="btn btn-primary" (click)="setStatus(proj.nombre)">Change status</button> </td>
+  </tr>
+  </tbody>
+</table>

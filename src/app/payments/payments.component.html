@@ -1,3 +1,27 @@
-<p>
-  payments works!
-</p>
+<h1>Selecciona un proyecto</h1>
+<select class="form-control" (change)="chooseProject($event.target.value)">
+  <option value="" selected>-</option>
+  <optgroup label="Mayo 2018">
+    <option value="p1">Paralelepipedo</option>
+  </optgroup>
+  <optgroup label="Junio 2018">
+    <option value="p2">Raul el perrete</option>
+  </optgroup>
+</select>
+<br>
+<div class="container" *ngIf="selected !== ''">
+  <table class="table" style="margin:10px auto; width:600px">
+    <thead>
+      <th scope="col">Backer</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Estado del pago</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pay of p_display">
+        <td>{{pay.by}}</td>
+        <td>{{pay.amount}}</td>
+        <td>{{pay.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
