@@ -10,7 +10,7 @@
 </select>
 <br>
 <div class="container" *ngIf="selected !== ''">
-  <table class="table" style="margin:10px auto; width:600px">
+  <table class="table text-center" style="margin:10px auto; width:400px">
     <thead>
       <th scope="col">Backer</th>
       <th scope="col">Monto</th>
@@ -24,4 +24,7 @@
       </tr>
     </tbody>
   </table>
+  <div class="container center-block">
+    <button class="btn btn-outline">Generate PDF</button>
+  </div>
 </div>

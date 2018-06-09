@@ -64,10 +64,12 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
-  setStatus(pname: string){
-    for(const p of this.projects){
-      if (p.nombre === pname){
-        p.status = 1 - p.status;
+  setStatus(pname: string) {
+    if (confirm('¿Está seguro?')) {
+      for (const p of this.projects) {
+        if (p.nombre === pname) {
+          p.status = 1 - p.status;
+        }
       }
     }
   }

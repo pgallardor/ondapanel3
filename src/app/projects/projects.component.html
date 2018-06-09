@@ -6,8 +6,8 @@
     </div>
   </form>
 </div>
-<table class="table" style="margin:10px auto; width:1000px">
-  <thead>
+<table class="table text-center" style="margin:10px auto; width:1000px">
+  <thead class="thead-dark">
     <th scope="col">Nombre proyecto</th>
     <th scope="col">Hecho por</th>
     <th scope="col">Categoría</th>
@@ -18,17 +18,17 @@
   </thead>
   <tbody>
   <tr *ngFor="let proj of display_proj">
-    <td>{{proj.nombre}}</td>
-    <td>{{proj.by}}</td>
-    <td>{{proj.cat}}</td>
-    <td>{{proj.goal}}</td>
-    <td>
+    <td class="align-middle">{{proj.nombre}}</td>
+    <td class="align-middle">{{proj.by}}</td>
+    <td class="align-middle">{{proj.cat}}</td>
+    <td class="align-middle">{{proj.goal}}</td>
+    <td class="align-middle">
       <div class="progress" style="height: 5px;">
         <div class="progress-bar" role="progressbar" [style.width]="proj.left + '%'" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
     </td>
-    <td>{{proj.status}}</td>
-    <td> <button class="btn btn-primary" (click)="setStatus(proj.nombre)">Change status</button> </td>
+    <td class="align-middle">{{proj.status}}</td>
+    <td> <button class="btn bt-md btn-primary" (click)="setStatus(proj.nombre)">Change status</button> </td>
   </tr>
   </tbody>
 </table>

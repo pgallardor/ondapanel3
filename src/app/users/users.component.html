@@ -5,11 +5,11 @@
     </div>
   </form>
 </div>
-<table class="table" style="margin:10px auto; width:800px">
-  <thead>
+<table class="table text-center" style="margin:10px auto; width:600px">
+  <thead class="thead-dark">
     <th scope="col">Username</th>
     <th scope="col">Estado</th>
-    <th scope="col"> Acciones </th>
+    <th scope="col">Acciones</th>
   </thead>
   <tbody>
     <tr *ngFor="let user of display_users">
@@ -18,7 +18,10 @@
         <div *ngIf="user.status === 1; else elseBlock">Activo</div>
         <ng-template #elseBlock>Baneado</ng-template>
       </td>
-      <td> <button class="btn btn-primary" (click)="setStatus(user.username)">Change status</button> </td>
+      <td>
+        <button class="btn btn-danger" (click)="setStatus(user.username)">Bansito</button>
+        <button class="btn btn-success">Ver detalles</button>
+      </td>
     </tr>
   </tbody>
 </table>

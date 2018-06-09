@@ -21,9 +21,11 @@ export class UsersComponent implements OnInit {
   }
 
   setStatus(uname: string){
-    for (const u of this.users) {
-      if (uname === u.username) {
-        u.status = 1 - u.status;
+    if (confirm('¿Está seguro?')) {
+      for (const u of this.users) {
+        if (uname === u.username) {
+          u.status = 1 - u.status;
+        }
       }
     }
   }

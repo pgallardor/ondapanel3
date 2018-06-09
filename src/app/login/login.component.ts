@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,14 +6,18 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, AfterViewInit {
 
   message: string;
   loginData = {username: '', password: ''};
-  constructor(private router: Router) { }
+  constructor(private router: Router, private elRef: ElementRef) { }
 
   ngOnInit() {
     this.message = '';
+  }
+
+  ngAfterViewInit(){
+    this.elRef.nativeElement.ownerDocument.body.style.backgroundColor = 'purple';
   }
 
   login(){
